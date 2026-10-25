@@ -1,0 +1,124 @@
+<!-- Declara que este documento usa o padrão HTML5. -->
+<!DOCTYPE html>
+<!-- Inicia o documento e informa que o idioma do conteúdo é português brasileiro. -->
+<html lang="pt-BR">
+
+<!-- Inicia a área de metadados e recursos da página. -->
+<head>
+    <!-- Define a codificação para exibir corretamente acentos e outros caracteres. -->
+    <meta charset="UTF-8">
+    <!-- Ajusta a largura da página ao dispositivo e define a escala inicial em celulares. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Define o texto exibido na aba do navegador. -->
+    <title>Ordens</title>
+    <!-- Carrega o arquivo CSS externo que estiliza a página. -->
+    <link rel="stylesheet" href="./css/style.css">
+<!-- Fecha a área de metadados do documento. -->
+</head>
+
+<!-- Inicia o conteúdo visível da página. -->
+<body>
+    <!-- Agrupa o conteúdo principal do painel de ordens. -->
+    <main class="painel">
+        <!-- Apresenta o título principal do painel. -->
+        <h1>Ordens de Produção</h1>
+        <!-- Cria o botão que ativa ou desativa a visualização para telas de fábrica. -->
+        <button id="modo-tv">Modo TV</button>
+        <!-- Inicia o formulário usado para cadastrar uma nova ordem de produção. -->
+        <form id="form-op">
+            <!-- Associa o rótulo ao campo de texto do produto por meio do atributo for. -->
+            <label for="produto">Produto:</label>
+            <!-- Campo de texto onde será informado o nome do produto. -->
+            <input type="text" name="produto" id="produto">
+
+            <!-- Associa o rótulo ao campo numérico de quantidade. -->
+            <label for="quantidade">Quantidade:</label>
+            <!-- Campo numérico que aceita quantidades a partir de um. -->
+            <input type="number" name="quantidade" id="quantidade" min="1">
+
+            <!-- Associa o rótulo à lista de seleção da máquina. -->
+            <label for="maquina">Máquina:</label>
+            <!-- Cria a lista suspensa para escolher a máquina de produção. -->
+            <select name="maquina" id="maquina">
+                <!-- Opção que identifica o torno CNC pelo valor cnc. -->
+                <option value="cnc">Torno CNC</option>
+                <!-- Opção que identifica a prensa pelo valor prensa. -->
+                <option value="prensa">Prensa</option>
+                <!-- Opção que identifica a injetora pelo valor injetora. -->
+                <option value="injetora">Injetora</option>
+                <!-- Opção que identifica a máquina de solda pelo valor solda. -->
+                <option value="solda">Solda</option>
+            <!-- Fecha a lista de seleção de máquinas. -->
+            </select>
+            <label for="urgente">Urgente</label>
+            <input type="checkbox" id="urgente">
+            <!-- Envia o formulário para que o JavaScript valide e cadastre a ordem. -->
+            <button type="submit">Abrir OP</button>
+            <!-- Área inicialmente oculta em que o JavaScript apresenta mensagens de validação. -->
+            <p id="mensagem" class="erro" hidden></p>
+        <!-- Fecha o formulário de cadastro de ordens. -->
+        </form>
+        <label for="busca">Buscar produto</label>
+        <input type="search" id="busca">
+        <!-- Agrupa os botões que filtram as ordens por situação. -->
+        <div class="container">
+            <!-- Botão para exibir ordens de todos os status. -->
+            <button class="filtro" data-filtro="todas">Todas</button>
+            <!-- Botão para exibir ordens que ainda aguardam produção. -->
+            <button class="filtro" data-filtro="aguardando">Aguardando</button>
+            <!-- Botão para exibir ordens que estão em produção. -->
+            <button class="filtro" data-filtro="producao">Em Produção</button>
+            <!-- Botão para exibir ordens já concluídas. -->
+            <button class="filtro" data-filtro="concluida">Concluídas</button>
+        <!-- Fecha o agrupamento dos botões de filtro. -->
+        </div>
+        <!-- Reserva um parágrafo para mostrar o resumo e as contagens das ordens. -->
+        <p id="resumo" class="resultado"></p>
+
+        <!-- Inicia a lista que receberá os cartões de ordem criados pelo JavaScript. -->
+        <ul id="lista" class="lista-ops">
+        <!-- Fecha a lista de ordens, inicialmente sem itens no HTML. -->
+        </ul>
+        <p id="vazia" hidden>Nenhuma ordem encontrada.</p>
+    <!-- Fecha o conteúdo principal do painel. -->
+    </main>
+    <!-- Carrega o código JavaScript que controla os filtros, formulário e cartões. -->
+    <script src="js/ordens.js"></script>
+
+<!-- Fecha o conteúdo visível da página. -->
+</body>
+<!-- Fecha o elemento raiz do documento HTML. -->
+</html>
+=======
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css"></link>
+    <title>Ordens</title>
+</head>
+<body>
+    <main class="painel">
+        <h1>Ordens de Produção</h1>
+        <label for="form-op">Produto</label>
+        <input type="text" id="form-op">
+        <label for="">Quantidade</label>
+        <button id="modo-tv">Modo TV</button>
+        <label>Selecione uma opção</label>
+        <select>
+        <option>Torno CNC</option>
+        <option>prensa</option>
+        <option>Injetora</option>
+        <option>Solga</option>
+        </select>
+        <p type="submit" id="erro" class="erro" hidden=""> </p>
+        <p id="resumo" class="resultado"></p>
+      
+        <ul id="lista" class="lista-ops">
+  
+        </ul>
+    </main>
+    <script src="js/ordens.js"></script>      
+</body>
+</html>

@@ -1,0 +1,207 @@
+/* Este arquivo reúne os estilos do projeto usado nos exercícios de lógica com JavaScript. */
+/* As variáveis de cor e as classes de estado são reutilizadas nos componentes do painel. */
+
+/* Define as variáveis globais que formam o tema padrão da página. */
+:root {
+  /* Define a cor de fundo padrão, branca. */
+  --cor-fundo: #FFFFFF;
+  /* Define a cor padrão dos textos. */
+  --cor-texto: #1E2A38;
+  /* Define a cor usada para destacar botões e focos. */
+  --cor-destaque: #E07A2E;
+  /* Define a cor padrão das bordas. */
+  --cor-borda: #D9DDD3;
+  /* Define uma cor clara para fundos suaves de mensagens. */
+  --cor-suave: #F4F5EF;
+}
+
+/* Aplica o mesmo cálculo de dimensões a todos os elementos e pseudo-elementos. */
+*,
+/* Inclui o conteúdo inserido antes de cada elemento no cálculo de dimensões. */
+*::before,
+/* Inclui o conteúdo inserido depois de cada elemento no cálculo de dimensões. */
+*::after {
+  /* Faz largura e altura incluírem conteúdo, preenchimento e borda. */
+  box-sizing: border-box;
+}
+
+/* Define as regras gerais para o corpo inteiro da página. */
+body {
+  /* Remove a margem padrão aplicada pelo navegador. */
+  margin: 0;
+  /* Define Arial como fonte principal e sans-serif como alternativa. */
+  font-family: Arial, sans-serif;
+  /* Define a altura de linha para melhorar a leitura do texto. */
+  line-height: 1.6;
+  /* Usa a variável de cor padrão para todos os textos. */
+  color: var(--cor-texto);
+  /* Usa a variável de cor padrão como fundo da página. */
+  background: var(--cor-fundo);
+}
+
+/* Define o espaço e a largura máxima de uma área genérica de exercício. */
+.exercicio {
+  /* Impede que o conteúdo fique mais largo que 560 pixels. */
+  max-width: 560px;
+  /* Centraliza horizontalmente e zera as margens verticais. */
+  margin: 0 auto;
+  /* Adiciona espaço interno ao redor do conteúdo. */
+  padding: 2rem 1.25rem;
+}
+
+/* Estiliza blocos de conteúdo genéricos usados em exercícios. */
+.bloco {
+  /* Cria espaço abaixo de cada bloco. */
+  margin-bottom: 2.5rem;
+  /* Cria espaço interno na parte inferior do bloco. */
+  padding-bottom: 1.5rem;
+  /* Desenha uma linha inferior fina usando a cor de borda do tema. */
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+/* Aplica estilos comuns aos rótulos dos campos de formulário. */
+label {
+  /* Faz cada rótulo ocupar sua própria linha. */
+  display: block;
+  /* Separa o rótulo do conteúdo que aparece acima dele. */
+  margin-top: 1rem;
+  /* Deixa o texto do rótulo em negrito. */
+  font-weight: bold;
+}
+
+/* Agrupa os estilos dos campos de texto e das listas de seleção. */
+input,
+/* Aplica as mesmas regras aos elementos select. */
+select {
+  /* Faz os campos ocuparem toda a largura disponível. */
+  width: 100%;
+  /* Cria espaço entre o conteúdo do campo e suas bordas. */
+  padding: 0.6rem;
+  /* Define o tamanho do texto dos campos. */
+  font-size: 1rem;
+  /* Desenha uma borda fina com a cor de borda do tema. */
+  border: 1px solid var(--cor-borda);
+  /* Arredonda os cantos dos campos. */
+  border-radius: 6px;
+}
+
+/* Define a aparência padrão de todos os botões. */
+button {
+  /* Adiciona espaço acima do botão para separá-lo de outros elementos. */
+  margin-top: 1.25rem;
+  /* Define o espaço interno vertical e horizontal do botão. */
+  padding: 0.7rem 1.5rem;
+  /* Define o tamanho do texto do botão. */
+  font-size: 1rem;
+  /* Usa a cor de fundo do tema para o texto do botão. */
+  color: var(--cor-fundo);
+  /* Usa a cor de destaque do tema como fundo do botão. */
+  background: var(--cor-destaque);
+  /* Remove a borda padrão do navegador. */
+  border: none;
+  /* Arredonda os cantos do botão. */
+  border-radius: 6px;
+  /* Mostra o cursor de mão para indicar que o botão pode ser clicado. */
+  cursor: pointer;
+}
+
+/* Altera a aparência do botão quando o ponteiro passa sobre ele. */
+button:hover {
+  /* Escurece ligeiramente o botão no estado de passagem do ponteiro. */
+  filter: brightness(0.9);
+}
+
+/* Seleciona campos e botões quando recebem foco visível pelo teclado. */
+input:focus-visible,
+/* Seleciona listas de seleção quando recebem foco visível pelo teclado. */
+select:focus-visible,
+/* Seleciona botões quando recebem foco visível pelo teclado. */
+button:focus-visible {
+  /* Desenha um contorno de destaque ao redor do elemento em foco. */
+  outline: 3px solid var(--cor-destaque);
+  /* Afasta o contorno um pouco da borda do elemento. */
+  outline-offset: 2px;
+}
+
+/* Compartilha a aparência base entre resultados e mensagens de estado. */
+.resultado,
+/* Inclui mensagens de sucesso nesse conjunto de estilos. */
+.ok,
+/* Inclui mensagens de alerta nesse conjunto de estilos. */
+.alerta,
+/* Inclui mensagens de erro nesse conjunto de estilos. */
+.erro {
+  /* Cria espaço acima do resultado ou mensagem. */
+  margin-top: 1.5rem;
+  /* Adiciona espaço interno ao redor do texto. */
+  padding: 1rem;
+  /* Arredonda os cantos da caixa de mensagem. */
+  border-radius: 8px;
+  /* Adiciona uma borda esquerda espessa para identificação visual. */
+  border-left: 6px solid var(--cor-texto);
+  /* Usa o fundo suave definido no tema. */
+  background: var(--cor-suave);
+  /* Mantém quebras de linha escritas no texto, como o caractere \n. */
+  white-space: pre-line;
+}
+
+/* Colore a borda e o fundo para indicar uma mensagem de sucesso. */
+.ok     { border-color: #2E7D32; background: #E8F5E9; }
+/* Colore a borda e o fundo para indicar uma mensagem de alerta. */
+.alerta { border-color: #F9A825; background: #FFF8E1; }
+/* Colore a borda e o fundo para indicar uma mensagem de erro. */
+.erro   { border-color: #C62828; background: #FFEBEE; }
+
+/* Define largura, centralização e espaçamento do painel de ordens. */
+.painel { max-width: 720px; margin: 0 auto; padding: 2rem 1.25rem; }
+/* Remove marcadores e recuo padrão da lista de ordens. */
+.lista-ops { list-style: none; padding: 0; }
+/* Define a aparência geral de cada cartão de ordem. */
+.op {
+  /* Separa o cartão do elemento que aparece antes dele. */
+  margin-top: 1rem;
+  /* Cria espaço interno ao redor das informações da ordem. */
+  padding: 1rem;
+  /* Desenha uma borda fina ao redor do cartão. */
+  border: 1px solid var(--cor-borda);
+  /* Cria uma borda esquerda mais espessa para destacar o status. */
+  border-left: 8px solid var(--cor-borda);
+  /* Arredonda os cantos do cartão. */
+  border-radius: 8px;
+}
+/* Remove a margem padrão do título dentro de um cartão de ordem. */
+.op h3 { margin: 0; }
+/* Ajusta as margens dos parágrafos dentro do cartão de ordem. */
+.op p  { margin: 0.25rem 0; }
+/* Usa amarelo na borda esquerda de ordens aguardando produção. */
+.status-aguardando { border-left-color: #F9A825; }
+/* Usa azul na borda esquerda de ordens em produção. */
+.status-producao   { border-left-color: #1565C0; }
+/* Usa verde e transparência leve para ordens concluídas. */
+.status-concluida  { border-left-color: #2E7D32; opacity: 0.7; }
+/* Desenha um contorno em torno do filtro que está selecionado. */
+.filtro.selecionado { outline: 3px solid var(--cor-texto); }
+/* Substitui variáveis de cores e aumenta a fonte no modo de exibição em TV. */
+.modo-tv {   /* Ajusta a aparência para uma tela grande no chão de fábrica. */
+  /* Define fundo quase preto no modo TV. */
+  --cor-fundo: #111111;
+  /* Define textos brancos para contraste com o fundo escuro. */
+  --cor-texto: #FFFFFF;
+  /* Clareia as bordas para que continuem visíveis no fundo escuro. */
+  --cor-borda: #444444;
+  /* Define fundo escuro para áreas que usam a cor suave. */
+  --cor-suave: #222222;
+  /* Aumenta o texto da interface para leitura à distância. */
+  font-size: 1.4rem;
+}
+
+.selo-urgente {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.1rem 0.5rem;
+  font-size: 0.75rem;
+  color: #FFFFFF;
+  background: #C62828;
+  border-radius: 4px;
+  vertical-align: middle;
+}
