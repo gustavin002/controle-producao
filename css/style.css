@@ -4,11 +4,11 @@
 /* Define as variáveis globais que formam o tema padrão da página. */
 :root {
   /* Define a cor de fundo padrão, branca. */
-  --cor-fundo: #FFFFFF;
+  --cor-fundo: #cacaca;
   /* Define a cor padrão dos textos. */
   --cor-texto: #1E2A38;
   /* Define a cor usada para destacar botões e focos. */
-  --cor-destaque: #E07A2E;
+  --cor-destaque: #000985;
   /* Define a cor padrão das bordas. */
   --cor-borda: #D9DDD3;
   /* Define uma cor clara para fundos suaves de mensagens. */
